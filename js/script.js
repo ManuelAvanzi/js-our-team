@@ -30,4 +30,15 @@ const team = [
       image: 'barbara-ramos-graphic-designer.jpg',
     },
   ];
-  
+
+
+  //Simply show me all in the console 
+  for(let i=0;i<team.length;i++){
+
+    
+    const person=team[i];
+    
+    for(let k in person){
+      console.log(k+":"+person[k]);
+    }
+  }
