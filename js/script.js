@@ -31,14 +31,33 @@ const team = [
     },
   ];
 
+  const containerHtml=document.querySelector(".team-container");
 
-  //Simply show me all in the console 
-  for(let i=0;i<team.length;i++){
 
-    
-    const person=team[i];
-    
-    for(let k in person){
-      console.log(k+":"+person[k]);
-    }
+
+  //lo faccio partire da uno cosi non devo modificare il file HTML
+  for(let i=1;i<team.length;i++){
+
+  const person=team[i];
+
+  
+  // stampo anche in console tutti i dati dei membri 
+  for(let k in person){
+    console.log(k+":"+person[k]);
   }
+
+  containerHtml.innerHTML +=
+    `<div class="team-card">
+     <div class="card-image">
+      <img src="./img/${team[i].image}" alt="member profile"/>
+     </div>
+    
+     <div class="card-text">
+      <h3>${team[i].name}</h3>
+      <p>${team[i].role}</p>
+    </div>
+  </div>  
+  `
+  }
+
+    
